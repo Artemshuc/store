@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import BodyContainer from "./components/BodyContainer";
 
 function App() {
+  const cards = [
+    {
+      name: "Микроволновка",
+      category: "Бытовая техника",
+      price: 7000,
+    },
+    {
+      name: "Холодильник",
+      category: "Бытовая техника",
+      price: 10000,
+    },
+    {
+      name: "Плита",
+      category: "Бытовая техника",
+      price: 30000,
+    },
+    
+
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <BodyContainer cards={cards} />
+  )
 }
 
 export default App;
