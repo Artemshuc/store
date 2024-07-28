@@ -1,0 +1,16 @@
+.cardBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  color: #090909;
+  border: 1px solid #090909;
+  border-radius: 15px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  box-sizing: border-box; 
+  font-family: "Montserrat", sans-serif;
+}

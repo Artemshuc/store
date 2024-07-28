@@ -1,0 +1,24 @@
+.button-nav {
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+    margin-right: 15px;
+    gap: 5px;
+}
+
+.material-symbols-outlined {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px;
+    gap: 5px;
+    
+}

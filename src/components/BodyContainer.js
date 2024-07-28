@@ -1,11 +1,11 @@
-import Cards from "./Cards";
+import './Styles/BodyContainer.css';
+import Cards from './Cards';
+import './Styles/Card.css'
 
-function BodyContainer ({cards}) {
-    return (
-        <div className="BodyContainer">
-            <Cards cards={cards}/>
-        </div>
-    )
+function BodyContainer({ cards, CountPrice }) {
+  return (
+    <Cards cards={cards} CountPrice={CountPrice} />
+  );
 }
 
-export default BodyContainer
+export default BodyContainer;

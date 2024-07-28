@@ -1,28 +1,21 @@
+import React, { useState } from "react";
 import BodyContainer from "./components/BodyContainer";
+import Header from "./components/Header";
+import cards from "./data/cards";
 
 function App() {
-  const cards = [
-    {
-      name: "Микроволновка",
-      category: "Бытовая техника",
-      price: 7000,
-    },
-    {
-      name: "Холодильник",
-      category: "Бытовая техника",
-      price: 10000,
-    },
-    {
-      name: "Плита",
-      category: "Бытовая техника",
-      price: 30000,
-    },
-    
+  const [totalPrice, setTotalPrice] = useState(0);
 
-  ];
+  const CountPrice = (price) => {
+    setTotalPrice(totalPrice + price);
+  };
+
   return (
-  <BodyContainer cards={cards} />
-  )
+    <div className="App">
+      <Header totalPrice={totalPrice} />;
+      <BodyContainer cards={cards} CountPrice={CountPrice} />
+    </div>
+  );
 }
 
 export default App;
