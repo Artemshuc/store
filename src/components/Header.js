@@ -1,5 +1,5 @@
 import "./Styles/Header.css"
-
+import Login from "./Login";
 function Header({totalPrice}) {
   return (
     <div className="button-nav">
@@ -19,6 +19,7 @@ function Header({totalPrice}) {
         <span class="material-symbols-outlined bag">shopping_bag</span> Корзина
         <div className="nav-price">Общая стоимость: {totalPrice}</div>
       </button>
+      <Login/>
     </div>
   );
 }
