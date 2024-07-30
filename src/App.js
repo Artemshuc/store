@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import BodyContainer from "./components/BodyContainer";
 import Header from "./components/Header";
-import cards from "./data/cards";
 
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -12,8 +11,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header totalPrice={totalPrice} />;
-      <BodyContainer cards={cards} CountPrice={CountPrice} />
+      <Header totalPrice={totalPrice} />
+      <BodyContainer CountPrice={CountPrice} />
     </div>
   );
 }

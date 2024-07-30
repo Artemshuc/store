@@ -8,7 +8,7 @@ label {
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-left: 50px;
+    margin-left: 80px;
     width: 60px;
     height: 30px;
     border-radius: 10px;
@@ -19,4 +19,10 @@ form {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+input {
+    margin: 3px;
+    margin-left: 10px;
+    width: 110px;
 }

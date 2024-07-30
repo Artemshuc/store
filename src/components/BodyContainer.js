@@ -4,7 +4,9 @@ import './Styles/Card.css'
 
 function BodyContainer({ cards, CountPrice }) {
   return (
-    <Cards cards={cards} CountPrice={CountPrice} />
+    <div className='body'>
+    <Cards cards={cards} CountPrice={CountPrice}/>
+    </div>
   );
 }
 

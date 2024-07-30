@@ -1,19 +1,25 @@
+import { useEffect, useState } from "react";
+import Card from "./Card";
 
-function Cards({ cards, CountPrice }) {
+function Cards({ CountPrice }) {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.escuelajs.co/api/v1/products")
+      .then((res) => res.json())
+      .then((json) => {
+        setCards(json);
+      })
+      .catch((error) => console.log(error.message));
+  }, []);
+
   return (
-    <div className="body-container">
-      {cards.map((card, index) => (
-        <div key={card.id} className="cardBody">
-          <h2>{card.name}</h2>
-          <p>{card.category}</p>
-          <p>{card.price}</p>
-          <button onClick={() => CountPrice(card.price)}>Добавить в корзину</button>
-        </div>
+    <>
+      {cards.map((card) => (
+        <Card key={card.id} {...card} CountPrice={CountPrice} />
       ))}
-    </div>
+    </>
   );
 }
 
-export default Cards
-
-
+export default Cards;

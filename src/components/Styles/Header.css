@@ -1,6 +1,6 @@
-.button-nav {
+.nav {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     margin-top: 15px;
     margin-right: 15px;
     gap: 5px;
@@ -19,6 +19,20 @@
     justify-content: flex-start;
     align-items: center;
     margin: 5px;
-    gap: 5px;
-    
+    gap: 5px;   
 }
+
+.button-nav button {
+    background-color: transparent;
+    color: aliceblue;
+    height: 60px;
+    margin-right: 5px;
+    border-radius: 15px;
+    border: 1px solid aliceblue;
+}
+
+.brandies {
+    float: left;
+    margin-top: 15px; 
+    margin-left: 100px; 
+  }
