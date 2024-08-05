@@ -4,14 +4,16 @@ import Header from "./components/Header";
 
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
+  const [items, setItems] = useState([]);
 
-  const CountPrice = (price) => {
-    setTotalPrice(totalPrice + price);
+  const CountPrice = (data) => {
+    setTotalPrice(totalPrice + data.price);
+    setItems([...items, data]);
   };
 
   return (
     <div className="App">
-      <Header totalPrice={totalPrice} />
+      <Header totalPrice={totalPrice} items={items} CountPrice={CountPrice} />
       <BodyContainer CountPrice={CountPrice} />
     </div>
   );

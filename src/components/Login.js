@@ -16,11 +16,21 @@ function Login() {
       <form onSubmit={handleUse}>
         <label>
           Username:
-          <input type="text" onChange={(event) => userData({...data,username:event.target.value})}/>
+          <input
+            type="text"
+            onChange={(event) =>
+              userData({ ...data, username: event.target.value })
+            }
+          />
         </label>
         <label>
           Password:
-          <input type="password" onChange={(event)=> userData({...data,password:event.target.value})}/>
+          <input
+            type="password"
+            onChange={(event) =>
+              userData({ ...data, password: event.target.value })
+            }
+          />
         </label>
         <button className="button-login">Login</button>
       </form>

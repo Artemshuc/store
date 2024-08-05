@@ -1,6 +1,15 @@
-import "./Styles/Header.css";
+import { useState } from "react";
 import Login from "./Login";
-function Header({ totalPrice }) {
+import "./Styles/Header.css";
+import SignUpForm from "./SignUpForm";
+
+function Header({ totalPrice, items, CountPrice }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleCardIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="nav">
       <div className="brandies">
@@ -21,11 +30,22 @@ function Header({ totalPrice }) {
           <span class="material-symbols-outlined">contact_support</span>{" "}
           Contacts
         </button>
-        <button>
+        <button onClick={handleCardIsOpen}>
           <span class="material-symbols-outlined bag">shopping_bag</span>
-          <div className="nav-price">Total price: {totalPrice}</div>
+          <div className="nav-price">Total price: {totalPrice} $</div>
         </button>
       </div>
+      {isOpen && (
+        <div className="card_isOpen">
+          {items.map((item, index) => (
+            <div key={index}>
+              <p>
+                {item.title} : {item.price} $
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
       <Login />
     </div>
   );

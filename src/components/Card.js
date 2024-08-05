@@ -11,7 +11,7 @@ function Card(props) {
   };
 
   const exchangeDescription =
-    description.length > 100 ? description.slice(0, 80) + "..." : description;
+    description.length > 100 ? description.slice(0, 80) + "..." : description; //Скрытие/раскрытие текста
 
   return (
     <div className="cards">
@@ -23,7 +23,7 @@ function Card(props) {
       </button>
       <small style={{ fontStyle: "italic" }}>{category.name}</small>
       <h2>{price} $</h2>
-      <button className="button" onClick={() => CountPrice(price)}>
+      <button className="button" onClick={() => CountPrice({ price, title })}>
         Buy
       </button>
     </div>
