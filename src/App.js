@@ -11,9 +11,15 @@ function App() {
     setItems([...items, data]);
   };
 
+  const handleDelete = (index) => {
+    const ItemToDelete = items[index]
+    setTotalPrice(totalPrice - ItemToDelete.price)
+    setItems(items.filter((_, idx) => idx !== index))
+  }
+
   return (
     <div className="App">
-      <Header totalPrice={totalPrice} items={items} CountPrice={CountPrice} />
+      <Header totalPrice={totalPrice} items={items} CountPrice={CountPrice} handleDelete={handleDelete}/>
       <BodyContainer CountPrice={CountPrice} />
     </div>
   );
