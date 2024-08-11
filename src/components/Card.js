@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Styles/Card.css";
 
 function Card(props) {
-  const { title, description, price, images, category, CountPrice } = props;
+  const { title, description, price, image, category, CountPrice } = props;
 
   const [isExpanded, setExpanded] = useState(false);
 
@@ -10,22 +10,34 @@ function Card(props) {
     setExpanded(!isExpanded);
   };
 
-  const exchangeDescription =
-    description.length > 100 ? description.slice(0, 80) + "..." : description; //Скрытие/раскрытие текста
+  const handleOverlayClick = () => {
+    setExpanded(false);
+  };
 
   return (
-    <div className="cards">
-      <img src={images} alt="card" />
-      <h1>{title}</h1>
-      <p>{isExpanded ? <p>{description}</p> : exchangeDescription}</p>
-      <button className="turnOff" onClick={handleExpandedClick}>
-        {isExpanded ? "Turn off" : "Read more"}
-      </button>
-      <small style={{ fontStyle: "italic" }}>{category.name}</small>
-      <h2>{price} $</h2>
-      <button className="button" onClick={() => CountPrice({ price, title })}>
-        Buy
-      </button>
+    <div className={`card-container ${isExpanded ? "expanded" : ""}`}>
+      {isExpanded && (
+        <div className="overlay" onClick={handleOverlayClick}></div>
+      )}
+      <div className={`card ${isExpanded ? "expanded" : ""}`}>
+        <img src={image} alt={title} />
+        <h1>{title}</h1>
+        <p className="description" onClick={handleExpandedClick}>
+          {isExpanded
+            ? description
+            : description.length > 100
+            ? description.slice(0, 80) + "..."
+            : description}
+          <span className="readMore">
+            {isExpanded ? "Turn off" : "Read more"}
+          </span>
+        </p>
+        <small style={{ fontStyle: "italic" }}>{category.name}</small>
+        <h2>{price} $</h2>
+        <button className="button" onClick={() => CountPrice({ price, title })}>
+          Buy
+        </button>
+      </div>
     </div>
   );
 }

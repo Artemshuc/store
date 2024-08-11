@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 
-const API_URL = "https://api.escuelajs.co/api/v1/products";
+const API_URL = 'https://fakestoreapi.com/products';
+
 function Cards({ CountPrice }) {
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -11,8 +12,10 @@ function Cards({ CountPrice }) {
     async function fetchData() {
       try {
         const res = await fetch(API_URL);
-        const cards = await res.json();
-        setCards(cards);
+        const data = await res.json();
+        console.log(data);
+        
+        setCards(data);
       } catch (error) {
         setError(error.message);
       }
@@ -27,7 +30,7 @@ function Cards({ CountPrice }) {
 
   return (
     <>
-      {isLoading ? (
+      {isLoading? (
         <h1>is Loading...</h1>
       ) : (
         cards.map((card) => (

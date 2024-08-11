@@ -39,11 +39,11 @@ function Header({ totalPrice, items, handleDelete }) {
 
         <div className={`slide-panel ${isOpen ? "active" : ""}`}>
           <div className="slide-header">
-            <Button onClick={handleCardIsOpen} className="close-btn">
-              Close
-            </Button>
             <h2>Your bag</h2>
           </div>
+          <Button onClick={handleCardIsOpen} className="close-btn">
+            Close
+          </Button>
 
           <div className="slide-content">
             {items.map((item, index) => (
@@ -52,7 +52,7 @@ function Header({ totalPrice, items, handleDelete }) {
                   {item.title} : {item.price} $
                 </p>
                 <p onClick={() => handleDelete(index)}>
-                <MdDelete />
+                  <MdDelete className="bin" />
                 </p>
               </div>
             ))}

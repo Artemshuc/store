@@ -17,8 +17,10 @@ function Login() {
   }
 
   return (
-    <div >
-      <Button className="Login" onClick={handleSignIn}>{sign ? "Close" : "Sign in"}</Button>
+    <div>
+      <Button className="Login" onClick={handleSignIn}>
+        {sign ? "Close" : "Sign in"}
+      </Button>
       {sign && (
         <form onSubmit={handleUse}>
           <label>
