@@ -7,7 +7,7 @@ function App() {
   const [items, setItems] = useState([]);
 
   const CountPrice = (data) => {
-    setTotalPrice(totalPrice + data.price);
+    setTotalPrice(Math.round(totalPrice + data.price));
     setItems([...items, data]);
   };
 

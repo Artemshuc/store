@@ -30,6 +30,7 @@ function Cards({ CountPrice }) {
 
   return (
     <>
+    
       {isLoading? (
         <h1>is Loading...</h1>
       ) : (
