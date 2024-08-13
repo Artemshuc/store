@@ -11,7 +11,7 @@ function Cards({ CountPrice }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch(API_URL);
+        const res = await fetch(API_URL,  { mode: 'cors' });
         const data = await res.json();
         console.log(data);
         

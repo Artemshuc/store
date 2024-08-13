@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import BodyContainer from "./components/BodyContainer";
+import Layout from "./components/Layouts/Layout";
+import Contacts from "./components/Contacts";
 import Header from "./components/Header";
+import SignIn from "./components/SignIn";
+import Footer from "./components/Footer";
 
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -12,15 +17,27 @@ function App() {
   };
 
   const handleDelete = (index) => {
-    const ItemToDelete = items[index]
-    setTotalPrice(totalPrice - ItemToDelete.price)
-    setItems(items.filter((_, idx) => idx !== index))
-  }
+    const ItemToDelete = items[index];
+    setTotalPrice(totalPrice - ItemToDelete.price);
+    setItems(items.filter((_, idx) => idx !== index));
+  };
 
   return (
     <div className="App">
-      <Header totalPrice={totalPrice} items={items} CountPrice={CountPrice} handleDelete={handleDelete}/>
-      <BodyContainer CountPrice={CountPrice} />
+      <Router>
+        <Header
+          totalPrice={totalPrice}
+          items={items}
+          handleDelete={handleDelete}
+        />
+        <Routes>
+          <Route path="/" element={<Layout />} />
+          <Route index element={<BodyContainer CountPrice={CountPrice} />} />
+          <Route path="Contacts" element={<Contacts />} />
+          <Route path="Sign_in" element={<SignIn />} />
+        </Routes>
+        <Footer/>
+      </Router>
     </div>
   );
 }

@@ -1,18 +1,15 @@
-import { useState } from "react";
 import Button from "./Button";
 
 function SignUp() {
-  const [signUp, setSign] = useState(false);
 
   const handleSignUp = () => {
-    setSign(!signUp);
+    window.open('https://github.com/Artemshuc');
   };
 
   return (
     <>
       <Button onClick={handleSignUp}>
-        {" "}
-        <a href="https://github.com/Artemshuc"></a>Sign Up
+        Sign up
       </Button>
     </>
   );
