@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: none;
+  background-color: #FFD8E4;
   color: #fff;
   position: relative;
 }
@@ -12,12 +12,17 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-left: 5rem;
+  color: black;
+  font-family: "Lato", sans-serif;
 }
 
 .button-nav {
   display: flex;
   align-items: center;
+  
 }
+
+.button-nav 
 
 .button-nav button:hover {
   color: bisque;
@@ -117,3 +122,19 @@
   width: 200px;
 }
 
+.Sign_form {
+  display: flex;
+}
+
+.Sign_form button {
+  display: inline-flex;
+  font-size: 15px;
+  width: 70px;
+  height: 25px;
+  color: black;
+  font-weight: 700;
+}
+
+.NavLink {
+  text-decoration: none;
+}

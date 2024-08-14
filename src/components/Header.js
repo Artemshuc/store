@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "./Button";
 import { MdDelete } from "react-icons/md";
 import "./Styles/Header.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import SignUp from "./SignUp";
 
 function Header({ totalPrice, items, handleDelete }) {
@@ -28,11 +28,11 @@ function Header({ totalPrice, items, handleDelete }) {
         <h1>Brandies</h1>
       </div>
       <div className="button-nav">
-        <Link to="/">
+        <NavLink to="/">
           <Button>
             <span className="material-symbols-outlined">home</span> Home
           </Button>
-        </Link>
+        </NavLink>
 
         <Button onClick={handleCategoriesToggle}>
           <span className="material-symbols-outlined">shopping_cart</span>{" "}
@@ -44,12 +44,12 @@ function Header({ totalPrice, items, handleDelete }) {
           Sales
         </Button>
 
-        <Link to="/Contacts">
+        <NavLink to="/Contacts">
           <Button onClick={handleContact}>
             <span className="material-symbols-outlined">contact_support</span>{" "}
             Contacts
           </Button>
-        </Link>
+        </NavLink>
 
         <Button onClick={handleCardIsOpen}>
           <span className="material-symbols-outlined bag">shopping_bag</span>
@@ -78,13 +78,12 @@ function Header({ totalPrice, items, handleDelete }) {
           </div>
         </div>
       </div>
-
-      <Link to="Sign_in">
-        <Button>
-          Sign in
-        </Button>
-      </Link>
-      <SignUp />
+      <div className="Sign_form">
+        <NavLink to="Sign_in">
+          <Button>Sign in</Button>
+        </NavLink>
+        <SignUp />
+      </div>
     </div>
   );
 }

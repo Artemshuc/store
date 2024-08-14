@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import SignIn from "./components/SignIn";
 import Footer from "./components/Footer";
 
+
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [items, setItems] = useState([]);

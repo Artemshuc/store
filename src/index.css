@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
-  background: rgb(28, 26, 26);
+  background-color: #E7E0EC;
   color:aliceblue;
 }
 
