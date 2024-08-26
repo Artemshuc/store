@@ -3,10 +3,10 @@ import Header from '../Header'
 import { Outlet } from 'react-router-dom'
 import Footer from '../Footer'
 
-function Layout() {
+function Layout({handleCategory}) {
   return (
     <div>
-        <Header/>
+        <Header handleCategory={handleCategory}/>
         <Outlet/>
         <Footer/>
     </div>

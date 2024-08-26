@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: #3a3a3a; 
+    background-color: #FFD8E4; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
   }
@@ -18,7 +18,7 @@
   .form label {
     margin-bottom: 15px;
     font-weight: bold;
-    color: #d3d3d3; 
+    color: black; 
   }
   
   .form input {
@@ -27,7 +27,7 @@
     margin-top: 5px;
     border: 1px solid #666;
     border-radius: 4px;
-    background-color: #4a4a4a; 
+    background-color: #e3f2fd; 
     color: #fff; 
     box-sizing: border-box;
     transition: border-color 0.3s, background-color 0.3s;
@@ -55,35 +55,3 @@
     transform: translateY(-2px); 
   }
   
-  
-
-
-/* label {
-    display: block;
-    direction: row;
-}
-
-.button-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-left: 80px;
-    width: 60px;
-    height: 30px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-input {
-    margin: 3px;
-    margin-left: 10px;
-    width: 110px;
-} */

@@ -4,8 +4,9 @@ import { MdDelete } from "react-icons/md";
 import "./Styles/Header.css";
 import { NavLink } from "react-router-dom";
 import SignUp from "./SignUp";
+import Categories from "./Categories";
 
-function Header({ totalPrice, items, handleDelete }) {
+function Header({ totalPrice, items, handleDelete, handleCategorySelect }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const [contact, setIsContact] = useState(false);
@@ -35,18 +36,16 @@ function Header({ totalPrice, items, handleDelete }) {
         </NavLink>
 
         <Button onClick={handleCategoriesToggle}>
-          <span className="material-symbols-outlined">shopping_cart</span>{" "}
+          <span className="material-symbols-outlined">shopping_cart</span>
           Categories
         </Button>
-        {isCategoriesOpen && <div></div>}
-        <Button>
-          <span className="material-symbols-outlined">arrow_downward_alt</span>{" "}
-          Sales
-        </Button>
+        {isCategoriesOpen && (
+          <Categories onSelectCategory={handleCategorySelect} />
+        )}
 
         <NavLink to="/Contacts">
           <Button onClick={handleContact}>
-            <span className="material-symbols-outlined">contact_support</span>{" "}
+            <span className="material-symbols-outlined">contact_support</span>
             Contacts
           </Button>
         </NavLink>

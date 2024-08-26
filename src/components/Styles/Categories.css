@@ -1,0 +1,25 @@
+.categoryy {
+    display: flex;
+    background-color: none;
+    color: black;
+    border-radius: 50px;
+    padding: 10px;
+    gap: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 100%;
+    left: 30%;
+}
+
+.one_category:hover {
+    scale: 1.1;
+}
+
+.one_category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #fff;
+}

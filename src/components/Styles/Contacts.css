@@ -1,0 +1,29 @@
+.Contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.Contacts h1, p {
+    font-family: "Roboto", sans-serif;
+    color: black;
+    margin: 5px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.footer a {
+    width: 50px;
+}
+
+.footer svg {
+    width: 40px;
+    border-radius: 10px;
+}

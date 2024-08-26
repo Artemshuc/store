@@ -1,32 +1,22 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react';
+import './Styles/Categories.css';
 
-function Categories({onSelectCategory}) {
-    const [categories, setCategories] = useState ([])
-    const API_URL = 'https://fakestoreapi.com/products/categories'
-    useEffect (() => {
-        const FetchCategories = async function () {
-            try {
-                const res = await axios.get (API_URL)
-                const category = res.data
-                setCategories(category)
-                console.log(category);
-                
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        FetchCategories()
-    }, [])
-  return (
-    <div>
-        {categories.map((category, index) => (
-            <ul key={index} onClick={() => onSelectCategory(category)}>
-                <li>{category}</li>
-            </ul>
-        ))}
-    </div>
-  )
+function Categories({ onSelectCategory }) {
+    const [categories] = useState([
+        { key: 'all', name: 'all' },
+        { key: "men's clothing", name: "men's clothing" },
+        { key: "women's clothing", name: "women's clothing" },
+        { key: 'electronics', name: 'electronics' },
+        { key: 'jewelery', name: 'jewelery' }
+    ]);
+
+    return (
+        <div className='categoryy'>
+            {categories.map(el => (
+                <div className='one_category' key={el.key} onClick={() => onSelectCategory(el.key)}>{el.name}</div>
+            ))}
+        </div>
+    );
 }
 
-export default Categories
+export default Categories;
